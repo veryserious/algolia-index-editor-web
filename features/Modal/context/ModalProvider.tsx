@@ -1,5 +1,19 @@
-import { HitProps } from "@/components/Hit/Hit";
-import React, { useEffect } from "react";
+import React from "react";
+
+/**
+ * ModalContext
+ * Context for the modal component to manage its state
+ * @param {boolean} open - whether the modal is open or not
+ * @param {object} hit - the hit to be edited or deleted
+ * @param {string} variant - the variant of the modal, either "edit" or "delete"
+ * @param {function} toggle - toggles the modal open or closed
+ * @param {function} setActiveHit - sets the hit to be edited or deleted
+ * @param {function} setEdit - sets the modal variant to "edit"
+ * @param {function} setDelete - sets the modal variant to "delete"
+ * @returns {object} ModalContext
+ *
+ * Currently contains logic surrounding the hit (see hit and setActiveHit p)
+ */
 
 type ModalContextType = {
   open: boolean;

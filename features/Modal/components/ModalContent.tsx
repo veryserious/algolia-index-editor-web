@@ -12,6 +12,7 @@ import { useAlgolia } from "@/hooks/useAlgolia";
 import { EditableProductFields } from "@/types";
 import InputField from "@/components/InputField";
 import { toUppercaseFirstLetter } from "@/utils";
+import { useHit } from "@/features/Hit";
 
 /**
  *
@@ -35,6 +36,8 @@ export default function ModalContent() {
     popularity: popularity,
     categories: categories,
   });
+
+  const { updatePendingHits, updateDeletedHits } = useHit();
 
   const { deleteRecord, updateRecord } = useAlgolia();
 
@@ -67,15 +70,6 @@ export default function ModalContent() {
                   />
                 </FormGroup>
               );
-
-              // if (prop[0] === "categories") {
-              //   return (
-              //     <Box key={index}>
-              //       <Typography>{prop[0]}</Typography>
-              //       <Typography>{prop[1].join(", ")}</Typography>
-              //     </Box>
-              //   );
-              // }
             })}
           </Stack>
           <Stack direction="row" spacing={2}>
@@ -85,6 +79,8 @@ export default function ModalContent() {
                   objectID: objectID,
                   ...hitState,
                 });
+                updatePendingHits(hit);
+                toggleModal();
               }}
             >
               Save
@@ -116,6 +112,8 @@ export default function ModalContent() {
               color="error"
               onClick={() => {
                 deleteRecord(objectID);
+                updateDeletedHits(hit);
+                toggleModal();
               }}
             >
               Delete

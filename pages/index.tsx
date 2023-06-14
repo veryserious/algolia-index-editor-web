@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import { searchClient } from "@/lib/algolia";
 import { InstantSearch, Hits } from "react-instantsearch-hooks-web";
 import Pagination from "@/components/Pagination";
-import Hit from "@/components/Hit";
+import { Hit } from "@/features/Hit";
 import { Modal, useModal } from "@/features/Modal";
 import ModalContent from "@/features/Modal/components/ModalContent";
 import SearchBox from "@/components/SearchBox";
