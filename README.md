@@ -22,3 +22,4 @@ More advanced use cases such should consider a microservice approach.
 - Add a little description to the top (or in a fab) of the app to explain how to use it
 - Add feedback alerts for API responses to inform user of action
 - Apply editing "status" state to hits so that user can see where action is in queue
+- Consider testing strategy for algolia results -> mock response
