@@ -17,5 +17,8 @@ More advanced use cases such should consider a microservice approach.
 ## TODO
 
 - Some utility styles provided by tailwind. Remove these in favour of MUI as having two styling solutions is confusing.
-- Apply "job in progress" state to edited hits
-- Provide image load holder to prevent sizing reflow
+- Provide image load placeholder for images
+- Add Form Validation using react-hook-form and Yum
+- Add a little description to the top (or in a fab) of the app to explain how to use it
+- Add feedback alerts for API responses to inform user of action
+- Apply editing "status" state to hits so that user can see where action is in queue

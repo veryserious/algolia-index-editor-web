@@ -3,9 +3,13 @@ import { Stack, Tooltip, SvgIcon } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useModal } from "@/features/Modal";
-import { HitProps } from "./Hit";
+import type { Hit as AlgoliaHit } from "instantsearch.js/es/types";
+import { Product } from "@/types";
+interface HitActionsProps {
+  hit: AlgoliaHit<Product>;
+}
 
-export default function HitActions({ hit }: HitProps) {
+export default function HitActions({ hit }: HitActionsProps) {
   const {
     toggle: toggleModal,
     setActiveHit,

@@ -4,7 +4,7 @@ import type { Hit as AlgoliaHit } from "instantsearch.js/es/types";
 import { Product } from "@/types";
 import Image from "next/image";
 import HitActions from "./HitActions";
-import grey from "@mui/material/colors/grey";
+import { grey } from "@mui/material/colors";
 
 export interface HitProps {
   hit: AlgoliaHit<Product>;
@@ -13,6 +13,7 @@ export interface HitProps {
 
 export default function Hit({ hit }: HitProps) {
   const { name, image } = hit;
+
   // TODO - Add missing image
   return (
     <Box
@@ -39,6 +40,7 @@ export default function Hit({ hit }: HitProps) {
             />
           </Box>
           <Typography>{name}</Typography>
+          {status && <Typography color="primary">{status}</Typography>}
         </Stack>
         <HitActions hit={hit} />
       </Stack>
