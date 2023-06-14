@@ -13,3 +13,9 @@ More advanced use cases such should consider a microservice approach.
 - Add existing Alogila keys to environmental files
 - Install dependencies `yarn install`
 - Start server `yarn start`
+
+## TODO
+
+- Some utility styles provided by tailwind. Remove these in favour of MUI as having two styling solutions is confusing.
+- Apply "job in progress" state to edited hits
+- Provide image load holder to prevent sizing reflow

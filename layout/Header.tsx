@@ -1,5 +1,12 @@
 import React from "react";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 
 export default function Header() {
-  return <header>Header</header>;
+  return (
+    <AppBar>
+      <Toolbar>
+        <Typography variant="h6">Algolia Editor</Typography>
+      </Toolbar>
+    </AppBar>
+  );
 }
