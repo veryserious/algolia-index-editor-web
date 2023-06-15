@@ -6,6 +6,7 @@ import { Hit } from "@/features/Hit";
 import { Modal, useModal } from "@/features/Modal";
 import ModalContent from "@/features/Modal/components/ModalContent";
 import SearchBox from "@/components/SearchBox";
+import { Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,21 +15,23 @@ export default function Dashboard() {
   return (
     <>
       <main
-        className={`flex min-h-screen flex-col items-center px-4 md:px-24 py-24 ${inter.className}`}
+        className={`flex flex-col items-center min-h-screen  px-4 md:px-24 py-24 ${inter.className}`}
       >
-        <InstantSearch
-          indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
-          searchClient={searchClient}
-        >
-          <SearchBox />
-          <Hits
-            hitComponent={Hit}
-            classNames={{
-              root: "w-full md:w-[80%]",
-            }}
-          />
-          <Pagination />
-        </InstantSearch>
+        <div className="w-full md:w-[80]">
+          <Typography gutterBottom>
+            This is a Proof of Concept application for Algolia InstantSearch
+            hooks integration with Next.js that provides a basic dashboard for
+            managing products.
+          </Typography>
+          <InstantSearch
+            indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
+            searchClient={searchClient}
+          >
+            <SearchBox />
+            <Hits hitComponent={Hit} />
+            <Pagination />
+          </InstantSearch>
+        </div>
       </main>
       <Modal open={open} onClose={toggle}>
         <ModalContent />

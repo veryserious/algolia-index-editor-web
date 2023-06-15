@@ -3,13 +3,23 @@ import React from "react";
 /**
  * HitContext
  * Context for the hit component to manage its state
+ * deleted and pending hits are stored as arrays of objectIDs, this approach was chosen over a hash table set for simplicity
+ * however, this approach is not ideal as it requires looping through both arrays to check the status of a hit - O(n^2)
+ * a better solution would be to use a hash table set at the context level
+ *
  * @param {object} hit - the hit to be edited or deleted
+ * @param {string} status - the status of the hit, either "edit", "pending", "delete", or "deleted"
+ * @param {array} deletedHits - array of deleted hits
+ * @param {array} pendingHits - array of pending hits
  * @param {function} setActiveHit - sets the hit to be edited or deleted
+ * @param {function} setStatus - sets the status of the hit
+ * @param {function} updateDeletedHits - updates the deleted hits array
+ * @param {function} updatePendingHits - updates the pending hits array
  * @returns {object} HitContext
  *
  */
 
-type HitStatus = "edit" | "pending" | "delete" | "deleted" | undefined;
+type HitStatus = "edit" | "pending" | "delete" | "deleted" | undefined; // status not currently used but could be useful in the future
 type ObjectID = string;
 
 type HitContextType = {
@@ -18,7 +28,7 @@ type HitContextType = {
   pendingHits: ObjectID[];
   status: HitStatus;
   setActiveHit: (hit: any) => void;
-  setStatus: (status: HitStatus) => void; // set to "edit" or "delete" enum
+  setStatus: (status: HitStatus) => void;
   updateDeletedHits: (hit: any) => void; // TODO: type this
   updatePendingHits: (hit: any) => void; // TODO: type this
 };

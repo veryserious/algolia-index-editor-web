@@ -5,11 +5,6 @@ import Typography from "@mui/material/Typography";
 
 const StyledSearchBox = styled(AlgoliaSearchBox)((props) => ({
   marginBottom: "3rem",
-  width: "80%",
-  [props.theme.breakpoints.down("md")]: {
-    // adjust mui theme breakpoints and tailwind breakpoints or remove one styling approach
-    width: "100%",
-  },
   "& .ais-SearchBox-form": {
     display: "flex",
     justifyContent: "center",
@@ -41,6 +36,7 @@ export default function SearchBox() {
       <Typography
         marginBottom={1}
         color="primary"
+        textAlign={"center"}
         variant="h4"
         component="h1"
         fontWeight={700}

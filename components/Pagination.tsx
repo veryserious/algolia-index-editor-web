@@ -6,6 +6,7 @@ const StyledPagination = styled(AlgoliaPagination)(({ theme }) => ({
   "& .ais-Pagination-list": {
     marginTop: "1rem",
     display: "flex",
+    justifyContent: "center",
   },
   "& .ais-Pagination-item": {
     position: "relative",
