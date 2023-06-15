@@ -12,6 +12,5 @@ export default async function handler(
   const input = JSON.parse(req.body);
 
   const recordUpdated = await updateRecord(input);
-  console.log(recordUpdated);
   res.status(200).json(recordUpdated);
 }

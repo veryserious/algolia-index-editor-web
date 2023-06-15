@@ -28,7 +28,9 @@ export default function Dashboard() {
             searchClient={searchClient}
           >
             <SearchBox />
-            <Hits hitComponent={Hit} />
+            <div className="shadow-sm overflow-hidden sm:rounded-lg">
+              <Hits hitComponent={Hit} />
+            </div>
             <Pagination />
           </InstantSearch>
         </div>

@@ -24,6 +24,17 @@ const StyledPagination = styled(AlgoliaPagination)(({ theme }) => ({
         color: theme.palette.common.white,
       },
     },
+    "&.ais-Pagination-item--disabled": {
+      color: theme.palette.grey[500],
+
+      "&:hover": {
+        backgroundColor: theme.palette.grey[300],
+        cursor: "not-allowed",
+        "& .ais-Pagination-link": {
+          color: theme.palette.grey[500],
+        },
+      },
+    },
   },
   "& .ais-Pagination-link": {
     display: "flex",
@@ -47,14 +58,9 @@ const StyledPagination = styled(AlgoliaPagination)(({ theme }) => ({
       color: theme.palette.primary.main,
     },
     "&:hover": {
-      color: theme.palette.primary.main,
-    },
-  },
-  "& .ais-Pagination-item--disabled.ais-Pagination-item": {
-    color: theme.palette.grey,
-    cursor: "default",
-    "& .ais-Pagination-link": {
-      color: theme.palette.grey,
+      "& .ais-Pagination-link": {
+        color: theme.palette.common.white,
+      },
     },
   },
 }));

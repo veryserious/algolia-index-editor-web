@@ -5,7 +5,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useModal } from "@/features/Modal";
 import type { Hit as AlgoliaHit } from "instantsearch.js/es/types";
 import { Product } from "@/types";
-import { useHit } from "../context/HitProvider";
 
 interface HitActionsProps {
   hit: AlgoliaHit<Product>;
@@ -19,16 +18,15 @@ export default function HitActions({ hit }: HitActionsProps) {
     setDelete: setModalToDelete,
   } = useModal();
 
-  const { status, setStatus } = useHit();
+  // TODO: refactor click handlers to use a single function
 
   return (
     <Stack direction="row" spacing={2}>
       <Tooltip title="Edit">
         <SvgIcon
-          color={status === "edit" ? "disabled" : "action"}
+          color={"action"}
           onClick={() => {
             setActiveHit(hit);
-            setStatus("edit");
             setModalToEdit();
             toggleModal();
           }}

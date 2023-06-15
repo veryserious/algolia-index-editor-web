@@ -18,11 +18,12 @@ More advanced use cases such should consider a microservice approach.
 ## TODO
 
 - Some utility styles provided by tailwind. Remove these in favour of MUI as having two styling solutions is confusing.
-- Provide image load placeholder for images
 - Add Form Validation using react-hook-form and Yum
-- Add a little description to the top (or in a fab) of the app to explain how to use it
 - Add feedback alerts for API responses to inform user of action
+- add try/catch to NextJS API routes to ensure better error handling
 - Add message queue using Redis or similar to track state of jobs that have been pushed to Algolia server (see below)
+- Refactor action buttons into reusable common component
+- Refactor click handlers within above component to improve maintainability
 
 ### Algolia caching
 

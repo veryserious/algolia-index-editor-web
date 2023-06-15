@@ -32,8 +32,6 @@ export default function Hit({ hit }: HitProps) {
   const { name, image } = hit;
   const { pendingHits, deletedHits } = useHit();
 
-  console.log(pendingHits);
-
   const hitStatus = checkHitStatus(hit.objectID, pendingHits, deletedHits);
 
   function hitStatusColor(status: string) {
@@ -58,7 +56,6 @@ export default function Hit({ hit }: HitProps) {
     }
   }
 
-  // TODO - Add missing image
   // TODO - refactor hitStatus into component and add to HitActions
   // TODO - refactor hitStatus funcs into hash table
   return (
